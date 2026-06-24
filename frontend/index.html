@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fanorona-Telo — Kolosaina</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="app">
+
+    <header>
+      <div class="logo-zone">
+        <div class="logo-text">
+          <span class="logo-k">K</span>OLOSAINA
+        </div>
+        <div class="logo-sub">presents</div>
+      </div>
+      <h1>FANORONA<span class="accent">-TELO</span></h1>
+      <p class="sous-titre">Jeu Traditionnel Malgache • Edition </p>
+    </header>
+
+    <!-- Config -->
+    <div class="config-bar">
+      <div class="config-item">
+        <label>MODE</label>
+        <div class="toggle-group">
+          <button class="toggle-btn active" id="btn-hvh" onclick="setMode('hvh')">👥 H vs H</button>
+          <button class="toggle-btn" id="btn-hvia" onclick="setMode('hvia')">👥 H vs IA</button>
+        </div>
+      </div>
+      <div class="config-item" id="config-niveau" style="display:none">
+        <label>NIVEAU IA</label>
+        <div class="toggle-group">
+          <button class="toggle-btn" id="btn-facile" onclick="setNiveau('facile')">Facile</button>
+          <button class="toggle-btn active" id="btn-moyen" onclick="setNiveau('moyen')">Moyen</button>
+          <button class="toggle-btn" id="btn-difficile" onclick="setNiveau('difficile')">Difficile</button>
+        </div>
+      </div>
+      <button class="btn-reset" onclick="nouvellePartie()">⟳ RESET</button>
+    </div>
+
+    <!-- Status bar -->
+    <div class="status-bar">
+      <div class="status-item">
+        <span class="status-label">PHASE</span>
+        <span class="status-val" id="info-phase">Mouvement</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">TOUR</span>
+        <span class="status-val" id="info-joueur">Joueur X</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">SCORE</span>
+        <span class="status-val" id="info-score">X: 0 — O: 0</span>
+      </div>
+    </div>
+
+    <!-- Message victoire -->
+    <div id="message-statut" class="message-statut hidden"></div>
+
+    <!-- Plateau -->
+    <div class="plateau-wrapper">
+
+      <!-- IA / Joueur O TOUJOURS en haut -->
+      <div class="player-tag tag-o" id="tag-o">
+        <div class="player-dot dot-o"></div>
+        <span id="tag-o-label">IA (O)</span>
+        <span class="pions-info" id="pions-o">● ● ●</span>
+      </div>
+
+      <div class="plateau-container">
+        <canvas id="lignes-plateau" width="360" height="360"></canvas>
+        <div class="plateau" id="plateau"></div>
+      </div>
+
+      <!-- Joueur X TOUJOURS en bas -->
+      <div class="player-tag tag-x" id="tag-x">
+        <div class="player-dot dot-x"></div>
+        <span id="tag-x-label">JOUEUR X</span>
+        <span class="pions-info" id="pions-x">● ● ●</span>
+      </div>
+
+    </div>
+
+    <!-- Légende -->
+    <div class="legende">
+      <span class="leg-item"><span class="dot-x-small"></span> Joueur X (bas)</span>
+      <span class="leg-sep">|</span>
+      <span class="leg-item"><span class="dot-o-small"></span> IA / O (haut)</span>
+      <span class="leg-sep">|</span>
+      <span class="leg-item"><span class="dot-move-small"></span> Déplacement</span>
+    </div>
+
+    <footer>
+      <p class="footer-brand"> VAOMIERA KOLOSAINA <span>© 2026</span></p>
+      <p class="footer-by">by <strong>Radoniaina Francky</strong></p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
