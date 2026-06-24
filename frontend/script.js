@@ -1,4 +1,4 @@
-const API = 'https://fanorona-telo-2.onrender.com';
+const API = 'https://fanorona-telo-2.onrender.com/api';
 
 const ADJACENCES = {
   0:[1,3,4], 1:[0,2,4], 2:[1,4,5],
